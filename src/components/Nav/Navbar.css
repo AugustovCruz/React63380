@@ -1,0 +1,23 @@
+.nav {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    background-color: rgb(47, 47, 49);
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+.nav-enlaces{
+    display: flex;
+    align-items: center;
+}
+.nav-enlaces ul {
+    margin: 0px 32px;
+}
+.nav-carrito {
+    display: flex;
+    align-items: center;
+}
