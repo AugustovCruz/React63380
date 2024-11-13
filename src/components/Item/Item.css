@@ -1,0 +1,75 @@
+.CardItem {
+    height: 100%;
+    width: 250px;
+    min-height: 330px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.CardItem:hover {
+    transform: scale(1.05);
+}
+
+.Header {
+    width: 100%;
+    height: 100px; 
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* .Header h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+
+picture {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+picture img {
+    max-width: 100%;
+    max-height: 550px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+section {
+    padding: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.Info {
+    margin: 5px 0;
+}
+
+.Itemfooter {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e68900;
+    color: #333;
+}

@@ -1,0 +1,43 @@
+.container-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 20px; /* Espacio entre la información y la imagen */
+    position: relative;
+}
+
+.info-product {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.info-product p {
+    margin: 5px 0;
+}
+
+.container-detail img {
+    width: 250px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+.botones {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding-top: 10px;
+}
+

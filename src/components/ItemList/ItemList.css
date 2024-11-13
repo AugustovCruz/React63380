@@ -1,0 +1,14 @@
+.ListGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    list-style-type: none;
+}
+
+.ListGroup > .CardItem {
+    flex: 1 1 calc(25% - 20px); /* Ajuste de ancho para mostrar 4 tarjetas por fila */
+    max-width: 250px;
+    min-width: 200px;
+}

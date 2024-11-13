@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
+import { CartWidget } from "../CartWidget/CartWidget";
 import "../Nav/navbar.css"
-
-// import Button from 'react-bootstrap/Button';
 
 function Nav() {
     return (
@@ -10,18 +10,20 @@ function Nav() {
             <a href='/'>LOGO</a>
         </div>
         <div className="nav-enlaces">
-            <ul>
-                <a href='/'>Ropa</a>
-            </ul>
-            <ul>
-                <a href='/'>Zapatillas</a>
-            </ul>
-            <ul>
-                <a href='/'>Pelotas</a>
-            </ul>
+            
+                <li>
+                    <Link to='/category/MLA1144'>Consolas</Link>
+                </li>
+                <li>
+                    <Link to='/category/MLA1648'>Computación</Link>
+                </li>
+                <li>
+                    <Link to='/category/MLA1276'>Deportes</Link>
+                </li>
+            
         </div>
         <div className="nav-carrito"> 
-            <button variant="secondary"><a href="/">🛒1</a> </button>
+            <CartWidget/>
         </div>
     </header>
     </>
