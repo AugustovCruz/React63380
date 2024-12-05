@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../asyncMock";
 import ItemList from "../ItemList/ItemList";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 function ItemListContainer () {
     const [products, setProducts] = useState([])
@@ -30,7 +30,7 @@ function ItemListContainer () {
                 <p>Cargando productos...</p>
             ) : 
             <>
-                <ItemList products={products}/>                
+                <ItemList  products={products}/>                
             </>
             }
         </>

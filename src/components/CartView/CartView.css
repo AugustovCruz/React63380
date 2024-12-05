@@ -1,0 +1,51 @@
+
+  .cart-view h2 {
+    margin-bottom: 20px;
+  }
+  
+  .cart-view  {
+    align-items: center;
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .btn-cart {
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    margin: 20px;
+  }
+  .add-produc {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .add-produc button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .add-produc input {
+    width: 5px;
+    text-align: center;
+  }
+
+  .trash button {
+    background: none;
+    color: black;
+  }
+  .trash img {
+    width: 20px;
+    height: 20px;
+  }
+  .trash button:hover {
+    background: red;
+  }
+  

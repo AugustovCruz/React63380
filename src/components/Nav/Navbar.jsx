@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { CartWidget } from "../CartWidget/CartWidget";
 import "../Nav/navbar.css"
 
@@ -7,7 +7,7 @@ function Nav() {
     <>
     <header className='nav'>
         <div className="nav-logo">
-            <a href='/'>LOGO</a>
+            <Link to='/'>LOGO</Link>
         </div>
         <div className="nav-enlaces">
             

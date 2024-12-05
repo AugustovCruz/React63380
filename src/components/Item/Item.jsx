@@ -1,6 +1,5 @@
-import React from 'react'
 import "../Item/Item.css"
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 const Item = ({product}) => {
     return (
@@ -8,6 +7,7 @@ const Item = ({product}) => {
             <header className="Header" >
                 <h2> {product.title} </h2>
             </header>
+            
             <picture>
                 <img src={product.thumbnail} alt={product.title} />
             </picture>

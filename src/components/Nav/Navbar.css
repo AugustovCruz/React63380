@@ -48,18 +48,19 @@
 }
 
 /* Carrito */
-.nav-carrito {
+.nav-carrito a {
+    text-decoration: none;
     font-size: 1.2rem;
     color: #fff;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.nav-carrito:hover {
+.nav-carrito a:hover {
     color: #ff9800;
 }
 
-/* Estilos responsivos para pantallas más pequeñas */
+/* Estilos responsivos*/
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;

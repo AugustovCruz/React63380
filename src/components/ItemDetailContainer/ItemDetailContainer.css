@@ -8,10 +8,11 @@
     max-width: 800px;
     margin: 20px auto;
     gap: 20px; /* Espacio entre la información y la imagen */
-    position: relative;
 }
 
 .info-product {
+    padding: 1rem;
+    text-align: start;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -31,13 +32,17 @@
     object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
 }
 
-.botones {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
+.go-cart {
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    padding-top: 10px;
 }
+.go-cart a{
+    text-decoration: none;
+    color: #ffff;
+}
+.go-cart a:hover{
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+
 
