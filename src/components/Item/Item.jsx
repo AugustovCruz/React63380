@@ -9,7 +9,7 @@ const Item = ({product}) => {
             </header>
             
             <picture>
-                <img src={product.thumbnail} alt={product.title} />
+                <img src={product.image} alt={product.title} />
             </picture>
             
                 <section>
@@ -17,7 +17,7 @@ const Item = ({product}) => {
                         Precio: ${product.price} {product.currency_id}
                     </p>
                     <p className= "Info" >
-                        Stock disponible: {product.available_quantity}
+                        Stock disponible: {product.stock}
                     </p>
                 </section>
             

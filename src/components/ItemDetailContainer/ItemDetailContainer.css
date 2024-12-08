@@ -21,6 +21,14 @@
     line-height: 1.5em;
 }
 
+.btn-back {
+    display: flex;
+}
+
+.btn-back button {
+    padding: 10px 40px;
+}
+
 .info-product p {
     margin: 5px 0;
 }
@@ -34,8 +42,13 @@
 
 .go-cart {
     display: flex;
+    justify-content: flex-end;
+    margin-bottom: 45px;
 }
 .go-cart a{
+    background: #ff9800;
+    border-radius: 4px;
+    padding: 10px 40px;
     text-decoration: none;
     color: #ffff;
 }

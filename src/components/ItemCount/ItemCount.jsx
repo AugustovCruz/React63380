@@ -20,7 +20,6 @@ const ItemCount = ({prod}) => {
     const handleAddCart = () => { 
         const addProduct = {...prod, contador}
         addCart(addProduct)
-        console.log(addProduct)
     }
 
     return (
@@ -29,7 +28,7 @@ const ItemCount = ({prod}) => {
                 <button onClick={reset}> Reset </button>
             </div>
             <div>
-                <button onClick={resta} disabled={contador <= 0} >-</button> {contador} <button onClick={suma} disabled={contador >= 10} >+</button> 
+                <button onClick={resta} disabled={contador <= 0} >-</button> {contador} <button onClick={suma} disabled={contador >= prod.stock} >+</button> 
             </div>
             <div>
                 <button onClick={handleAddCart} disabled= {contador<=0}  >Agregar al Carrito</button>

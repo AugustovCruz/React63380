@@ -2,7 +2,7 @@ import Item from '../Item/Item';
 import "../ItemList/ItemList.css"
 
 const ItemList = ({products}) => {
-
+    
     if (!products) {
         return <p>No hay suficientes productos.</p>;
     }

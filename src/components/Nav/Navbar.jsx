@@ -12,13 +12,13 @@ function Nav() {
         <div className="nav-enlaces">
             
                 <li>
-                    <Link to='/category/MLA1144'>Consolas</Link>
+                    <Link to='/category/consolas'>Consolas</Link>
                 </li>
                 <li>
-                    <Link to='/category/MLA1648'>Computación</Link>
+                    <Link to='/category/computacion'>Computación</Link>
                 </li>
                 <li>
-                    <Link to='/category/MLA1276'>Deportes</Link>
+                    <Link to='/category/deportes'>Deportes</Link>
                 </li>
             
         </div>

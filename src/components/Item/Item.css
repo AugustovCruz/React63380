@@ -37,10 +37,10 @@ picture {
 }
 
 picture img {
-    max-width: 100%;
-    max-height: 550px;
+    width: 200px;
+    height: 200px;
     border-radius: 8px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 section {

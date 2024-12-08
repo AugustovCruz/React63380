@@ -1,50 +1,57 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router'
+import { Link, useNavigate, useParams } from 'react-router'
 import ItemCount  from "../ItemCount/ItemCount"
 import "../ItemDetailContainer/ItemDetailContainer.css"
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 
 
 const ItemDetailContainer = () => {
-
+  
+  const navigate = useNavigate()
   const {id} = useParams()
-  const [product, setProduct] = useState()
+  const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect (()=>{
-    fetch(`https://api.mercadolibre.com/items/${id}`)
-      .then(resp=> resp.json())
-      .then(data=> {
-        setProduct({...data})
-        setLoading(false)
+    const productRef = doc(db, "products", id)
+    getDoc(productRef)
+      .then( (resp)=> {
+        setProduct(
+          { ...resp.data(), id: resp.id}
+        )
       })
+      setLoading(false)
   }, [id]) 
 
   if (loading) return <p>Cargando el detalle del producto . . .</p>
-  console.log(product.title)
-  console.log(product.available_quantity)
 
-  const hardcodeo = {
-    title:product.title,
-    price: product.price,
-    thumbnail:product.thumbnail,
+  const goBack = () => {
+    navigate(-1)
   }
 
   return (
     <>
+      <section className='btn-back'>
+        <button onClick={goBack} >Atrás</button>
+      </section>
       <div className="container-detail">
-        <img src={product.thumbnail} alt= {product.title} />
+        <img src={product.image} alt= {product.title} />
         <div className="info-product" >
           <p> Nombre:{product.title} </p>
           <p> Precio: {product.price} </p>
-          <p> Stock: {product.available_quantity} </p>
+          <p> Stock: {product.stock} </p>
           <div className="botones">
-            {product && <ItemCount prod={ hardcodeo} /> }
+            {product && <ItemCount prod={ product} /> }
           </div>
         </div>
       </div>
-      <button className='go-cart'>
-        <Link to='/Cart'>Ir al carrito</Link>
-      </button>
+      <section className='go-cart'>
+        
+          <Link to='/Cart'>Ir al carrito</Link>
+        
+      </section>
+
     </>
   )
 }

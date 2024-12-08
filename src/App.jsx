@@ -5,6 +5,8 @@ import Nav from './components/Nav/Navbar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartContextProvider from './context/CartContext';
 import CartView from './components/CartView/CartView';
+import Checkout from './components/Checkout/Checkout';
+import Footer from './components/Footer/Footer';
 function App() {
 
   return (
@@ -18,7 +20,9 @@ function App() {
             <Route exact path="/item/:id" element= {<ItemDetailContainer/>}/>
             <Route exact path="/category/:category" element= {<ItemListContainer/>}/>
             <Route exact path="/Cart" element= {<CartView/> } />
+            <Route exact path="/Checkout" element={<Checkout/>}/>
           </Routes>
+          <Footer/>
         </BrowserRouter>
         
       </CartContextProvider>

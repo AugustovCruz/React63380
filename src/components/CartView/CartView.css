@@ -2,6 +2,11 @@
   .cart-view h2 {
     margin-bottom: 20px;
   }
+
+  .cart-view img {
+    width: 150px;
+    height: auto;
+  }
   
   .cart-view  {
     align-items: center;
@@ -17,7 +22,7 @@
   
   .btn-cart {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-content: end;
     margin: 20px;
   }
@@ -49,3 +54,16 @@
     background: red;
   }
   
+  .btn-buy {
+    margin-bottom: 50px;
+  }
+
+  .btn-buy a{
+    padding: 10px 60px;
+    color: #FFFF;
+    text-decoration: none;
+  }
+  .btn-buy a:hover {
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }

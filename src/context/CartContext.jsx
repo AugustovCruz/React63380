@@ -2,9 +2,11 @@ import { createContext, useEffect, useState} from 'react'
 
 export const CartContext = createContext()
 
+const cartStorage =  JSON.parse(localStorage.getItem("cartStorage")) || []
+
 const CartContextProvider = (props) => {
     
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(cartStorage);
 
     const addCart = (prod) => {
 
@@ -40,10 +42,11 @@ const CartContextProvider = (props) => {
     }
 
     const priceTotal = () => {
-        return cart.reduce( (total, prod) => total + prod.price*prod.contador, 0)
+        return cart.reduce( (total, prod) => total + prod.price*prod.contador, 0).toFixed(2)
     }
 
     useEffect ( ()=>{ 
+        localStorage.setItem("cartStorage", JSON.stringify(cart))
         console.log("Estado actual del carrito", cart)
     },[cart])
 
