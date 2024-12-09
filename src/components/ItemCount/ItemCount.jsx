@@ -16,7 +16,7 @@ const ItemCount = ({prod}) => {
         setContador(0)
     }
 
-    // Función para manejar el clic del botón 
+    // Funcion para manejar el clic del boton 
     const handleAddCart = () => { 
         const addProduct = {...prod, contador}
         addCart(addProduct)

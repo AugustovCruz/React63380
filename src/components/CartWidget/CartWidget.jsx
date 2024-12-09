@@ -4,7 +4,7 @@ import { Link } from "react-router"
 
 export const CartWidget = () => {
 
-  const {cart, totalCant, cantTotalCart} = useContext(CartContext)
+  const {totalCant, cantTotalCart} = useContext(CartContext)
   
   return (
     <>

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState} from 'react' 
 
 export const CartContext = createContext()
-
+//Almaceno los datos locales para que el render no lo elimine
 const cartStorage =  JSON.parse(localStorage.getItem("cartStorage")) || []
 
 const CartContextProvider = (props) => {

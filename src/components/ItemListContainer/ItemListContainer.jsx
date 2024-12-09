@@ -10,7 +10,7 @@ function ItemListContainer () {
     const {category} = useParams() 
     
     useEffect (()=> {
-
+        // Manejo de DB firestore
         const productsRef = collection(db, "products")
         const categ = category ? query(productsRef, where("category", "==", category) ) : productsRef
 

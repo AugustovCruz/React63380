@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router";
 
 const CartView = () => {
     const { cart, emptyCart, priceTotal, deletProduct, setCart, totalCant } = useContext(CartContext);
+    // usando un hook para ir a la seccion anterior
     const navigate = useNavigate()
 
     const handleClick = (item) => {

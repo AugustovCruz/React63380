@@ -9,25 +9,30 @@ import "../Checkout/Checkout.css"
 
 const Checkout = () => {
 
+    const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null)
     const {cart, priceTotal, emptyCart } = useContext(CartContext)
     const {register, handleSubmit} = useForm()
 
     const buy = (data) => {
+        setLoading(true)
         const order = {
             client: data,
             products: cart,
             total: priceTotal(),
         }
-
+        // Creo la coleccion en en DB o lo agrego
         const buyRef = collection(db, "orders")
 
         addDoc(buyRef, order)
             .then ((doc) =>{
                 setOrderId(doc.id)
                 emptyCart()
+                setLoading(false)
             })
     }
+
+    if (loading) return <p>Se esta cargando su orden . . .</p>
 
     if (orderId) {
         return (
