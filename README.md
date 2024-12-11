@@ -33,7 +33,7 @@ Se agregaron nuevas dependencias de **Firebase** y **react-hook-form** este ulti
   
   Esto permite actualizar el contenido mostrado en las secciones a medida que se navega entre diferentes rutas
 
-  ## useContext
+## useContext
   
   - Implemente el hook **useContext** para administrar el estado global del carrito de compras, evitando el prop drilling. Esto facilita el acceso y manipulacion de los datos del carrito desde cualquier componente de la aplicación.
 

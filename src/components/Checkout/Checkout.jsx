@@ -5,6 +5,8 @@ import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebase/config"
 import { Link } from "react-router"
 import "../Checkout/Checkout.css"
+//Importando React spinner
+import { PropagateLoader } from "react-spinners"
 
 
 const Checkout = () => {
@@ -32,7 +34,14 @@ const Checkout = () => {
             })
     }
 
-    if (loading) return <p>Se esta cargando su orden . . .</p>
+    if (loading) {
+        return (
+            <>
+                <p>Se esta cargando su orden</p>
+                <PropagateLoader/>
+            </>
+        )
+    } 
 
     if (orderId) {
         return (

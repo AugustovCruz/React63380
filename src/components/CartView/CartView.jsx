@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import "../CartView/CartView.css"
 import { Link, useNavigate } from "react-router";
+//Importanto Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const CartView = () => {
@@ -10,6 +13,7 @@ const CartView = () => {
     const navigate = useNavigate()
 
     const handleClick = (item) => {
+        toast.info("Producto eliminado")
         deletProduct(item)
     }
 
@@ -38,6 +42,7 @@ const CartView = () => {
 
     return (
         <>
+            <ToastContainer/>
             {
                 totalCant() > 0 ?
                 <>

@@ -1,5 +1,8 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
+//Importanto toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCount = ({prod}) => {
     
@@ -17,13 +20,20 @@ const ItemCount = ({prod}) => {
     }
 
     // Funcion para manejar el clic del boton 
-    const handleAddCart = () => { 
-        const addProduct = {...prod, contador}
-        addCart(addProduct)
+    const handleAddCart = () => {
+        if (contador === 0) {
+            toast.warn("Necesita agregar una cantidad")
+        } else {
+            toast.success("Producto agregado!")
+            const addProduct = {...prod, contador}
+            addCart(addProduct)
+        }
+
     }
 
     return (
         <>
+            <ToastContainer />
             <div>
                 <button onClick={reset}> Reset </button>
             </div>
@@ -31,7 +41,7 @@ const ItemCount = ({prod}) => {
                 <button onClick={resta} disabled={contador <= 0} >-</button> {contador} <button onClick={suma} disabled={contador >= prod.stock} >+</button> 
             </div>
             <div>
-                <button onClick={handleAddCart} disabled= {contador<=0}  >Agregar al Carrito</button>
+                <button onClick={handleAddCart} disabled= {contador<0}  >Agregar al Carrito</button>
             </div>
         </>
     )

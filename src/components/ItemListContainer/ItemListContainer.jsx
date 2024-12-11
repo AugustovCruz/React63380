@@ -3,6 +3,8 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
+//Importanto React Spinner
+import { ScaleLoader } from "react-spinners";
 
 function ItemListContainer () {
     const [products, setProducts] = useState([])
@@ -34,8 +36,12 @@ function ItemListContainer () {
     return (
 
         <>
-            {loading ? ( // Muestra un mensaje de carga
-                <p>Cargando productos...</p>
+            {loading ? ( 
+                <>
+                    <p>Cargando productos</p>
+                    <ScaleLoader/>
+                </>
+
             ) : 
             <>
                 <ItemList  products={products}/>                

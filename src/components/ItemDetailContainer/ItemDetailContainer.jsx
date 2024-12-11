@@ -4,6 +4,8 @@ import ItemCount  from "../ItemCount/ItemCount"
 import "../ItemDetailContainer/ItemDetailContainer.css"
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+//spinners
+import { ClipLoader} from 'react-spinners'
 
 
 const ItemDetailContainer = () => {
@@ -20,11 +22,20 @@ const ItemDetailContainer = () => {
         setProduct(
           { ...resp.data(), id: resp.id}
         )
+        setLoading(false)
       })
-      setLoading(false)
+
   }, [id]) 
 
-  if (loading) return <p>Cargando el detalle del producto . . .</p>
+  if (loading) {
+    return (
+      <>
+        <p>Cargando el detalle del producto</p>
+        <ClipLoader/>
+      </>
+    )
+
+  } 
 
   const goBack = () => {
     navigate(-1)

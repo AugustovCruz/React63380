@@ -15,12 +15,11 @@ const CartContextProvider = (props) => {
 
         if (found) {
             found.contador += prod.contador
-            console.log("Sumando cantidades", found.contador)
             setCart(updateCart)
         } else {
             setCart( [...cart, prod] )
         }        
-        console.log("producto agregado",prod.title)
+        
     }
 
     const totalCant = () => {
@@ -32,7 +31,6 @@ const CartContextProvider = (props) => {
     }
 
     const deletProduct = (product) => {
-        console.log(product.title)
         const found = cart.find( prod => prod.title === product.title )
         setCart (cart.filter(prod => prod.title != found.title))
     }
@@ -47,7 +45,6 @@ const CartContextProvider = (props) => {
 
     useEffect ( ()=>{ 
         localStorage.setItem("cartStorage", JSON.stringify(cart))
-        console.log("Estado actual del carrito", cart)
     },[cart])
 
 
