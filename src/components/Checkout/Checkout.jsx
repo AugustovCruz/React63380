@@ -22,6 +22,7 @@ const Checkout = () => {
             client: data,
             products: cart,
             total: priceTotal(),
+            date: new Date()
         }
         // Creo la coleccion en en DB o lo agrego
         const buyRef = collection(db, "orders")

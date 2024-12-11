@@ -39,6 +39,11 @@ Se agregaron nuevas dependencias de **Firebase** y **react-hook-form** este ulti
 
   - Además `<CartContext/>` se encarga de almacenar la información del carrito, incluyendo los productos añadidos y sus cantidades. Utilizo localStorage para mantener la persistencia de los datos, de modo que el estado del carrito se conserve incluso si se refresca la página. Al cargar la aplicación, el carrito se inicializa con los datos almacenados en localStorage.
 
+## Dependecias
+  - Se agregaron dependencias como **react-spinners** para la carga de productos
+  - **react-toastify** para las notificaciones del manejor del usuario
+  - **firebase** para el manejo de datos con el servicios de firestore
+  - **react-hook-form** para el formulario al momento de hacer el checkout
 ## EshopReact
 
 -Bienvenido a Eshoop React, una tienda en línea construida con **React**. Este proyecto utiliza **React Router** para la navegación y **Firebase** para almacenar los datos del ecommerce.

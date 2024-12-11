@@ -7,10 +7,12 @@ import CartContextProvider from './context/CartContext';
 import CartView from './components/CartView/CartView';
 import Checkout from './components/Checkout/Checkout';
 import Footer from './components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 function App() {
 
   return (
     <>
+      <ToastContainer />
       <CartContextProvider>
 
         <BrowserRouter>        

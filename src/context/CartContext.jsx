@@ -1,4 +1,7 @@
 import { createContext, useEffect, useState} from 'react' 
+//Toastify
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext = createContext()
 //Almaceno los datos locales para que el render no lo elimine
@@ -9,18 +12,28 @@ const CartContextProvider = (props) => {
     const [cart, setCart] = useState(cartStorage);
 
     const addCart = (prod) => {
-
-        const updateCart = [...cart]
-        const found = updateCart.find( (p)=> p.title === prod.title)
-
+        const updateCart = [...cart];
+        const found = updateCart.find((p) => p.title === prod.title);
+    
+        if (prod.contador > prod.stock) {
+            alert("No hay suficiente stock disponible");
+            return;
+        }
+    
         if (found) {
-            found.contador += prod.contador
-            setCart(updateCart)
+            if (found.contador + prod.contador <= prod.stock) {
+                found.contador += prod.contador;
+                setCart(updateCart);
+            } else {
+                toast.warn("Cantidad excede el stock disponible")
+                return
+            }
         } else {
-            setCart( [...cart, prod] )
-        }        
-        
-    }
+            setCart([...cart, prod]);
+        }
+        toast.success("Producto agregado!")
+    };
+    
 
     const totalCant = () => {
         return cart.length

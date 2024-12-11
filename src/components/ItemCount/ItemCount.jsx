@@ -23,10 +23,10 @@ const ItemCount = ({prod}) => {
     const handleAddCart = () => {
         if (contador === 0) {
             toast.warn("Necesita agregar una cantidad")
-        } else {
-            toast.success("Producto agregado!")
+        } else if (contador <= prod.stock ) {
             const addProduct = {...prod, contador}
             addCart(addProduct)
+            console.log(prod.stock)
         }
 
     }
@@ -38,7 +38,9 @@ const ItemCount = ({prod}) => {
                 <button onClick={reset}> Reset </button>
             </div>
             <div>
-                <button onClick={resta} disabled={contador <= 0} >-</button> {contador} <button onClick={suma} disabled={contador >= prod.stock} >+</button> 
+                <button onClick={resta} disabled={contador <= 0} >-</button> 
+                    {contador} 
+                <button onClick={suma} disabled={contador >= prod.stock} >+</button> 
             </div>
             <div>
                 <button onClick={handleAddCart} disabled= {contador<0}  >Agregar al Carrito</button>
